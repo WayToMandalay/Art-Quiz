@@ -1,0 +1,61 @@
+
+.welcome {
+  @extend %winAbs;
+  @extend %bgi;
+
+  background-image: url('../assets/img/welcomeBG.jpg');
+  
+  // transform: translateX(0);
+  transform: translateX(-100vw);
+
+  &-container {
+    @extend %cont;
+    justify-content: flex-end;
+    padding-bottom: 100px;
+
+    @include breakpoint-min(lg) {
+      padding-top: 40px;
+    }
+  }
+
+  &-title {
+    margin-bottom: 45px;
+  }
+
+  &-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+    width: 70%;
+  }
+}
+
+.btn-welcome {
+  @extend %btn;
+  // width: 260px;
+  width: 90%;
+  font-size: 1em;
+}
+
+.settings-btn {
+  position: absolute;
+  top: 42px;
+  right: 22px;
+  width: 35px;
+  height: 35px;
+  background-image: url('../assets/svg/toggle.svg');
+  transition: opacity 0.3s ease;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:hover {
+    animation: rotating 3s linear infinite;
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 1;
+    
+  }
+}
+

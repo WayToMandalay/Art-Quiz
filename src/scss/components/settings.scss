@@ -1,0 +1,167 @@
+.settings {
+  @extend %winAbs;
+  background-color: #ABB8FF;
+  transform: translateX(-100vw);
+  font-size: 20px;
+  font-weight: 700;
+
+  @include breakpoint-min(md) {
+    font-size: 40px;
+  }
+
+  #settings-volume-value {
+    width: 100%;
+  }
+
+  &-container {
+    @extend %cont;
+    padding: 30px 40px 70px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+
+    @include breakpoint-min(md) {
+      // padding-top: 40px;
+      align-items: flex-start;
+    }
+  }
+
+  &-title {
+    font-size: 1em;
+    text-align: center;
+    @include breakpoint-min(md) {
+      text-align: left;
+    }
+  }
+
+  &-semititle {
+    font-size: 1.3em;
+    text-align: center;
+    @include breakpoint-min(md) {
+      text-align: left;
+    }
+  }
+
+  &-volume {
+    width: 100%;
+  }
+
+  &-timer {
+    &-block {
+      display: flex;
+      justify-content: center;
+      column-gap: 15px;
+      align-items: center;
+      @include breakpoint-min(md) {
+        justify-content: flex-start;
+      }
+      
+      span {
+        font-weight: 400;
+        font-size: 0.8em;
+        line-height: 20px;
+        text-transform: capitalize;
+      }
+    }
+
+    .form-check-input:checked {
+      background-color: lightpink;
+    }
+
+    &-value {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include breakpoint-min(md) {
+        align-items: flex-start;
+      }
+    }
+
+    &-controllers {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 25px;
+
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: 400;
+        text-align: center;
+        width: 40px;
+
+      }
+    }
+
+    &-minus,
+    &-plus {
+      width: 33px;
+      height: 33px;
+      background-color: lightpink;
+      text-align: center;
+      display: inline-block;
+      vertical-align: middle;
+      border-radius: 50%;
+      border: none;
+      outline: none;
+      color: #000;
+      transition: all 0.2s ease;
+      font-size: 20px;
+      &:hover {
+        background-color: rgba(255, 255, 255, 1);
+      }
+      &:active {
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+
+  &-btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 15px;
+    .btn-settings {
+      width: 50%;
+      border-radius: 2rem;
+    }
+    .btn-settings-pink {
+      background-color: lightpink;
+      color: #000;
+      &:hover {
+        background-color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+
+  &-exit {
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    // border: 2px solid #fff;
+    background-image: url('../assets/img/arr-left.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    &:active {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    @include breakpoint-min(md) {
+      left: -20px;
+      top: 35px;
+    }
+  }
+
+  
+}

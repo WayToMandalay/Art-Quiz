@@ -1,0 +1,224 @@
+@import './styles/bootstrap.min.css';
+@import './styles/variables.scss';
+@import './styles/extentions.scss';
+@import './styles/animation.scss';
+@import './styles/mixins.scss';
+
+@import './components/welcomePage.scss';
+@import './components/settings.scss';
+@import './components/categories.scss';
+@import './components/results.scss';
+@import './components/paintingQuiz.scss';
+@import './components/popUp.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+h1,h2,h3,h4 {
+  // margin: 0;
+  padding: 0;
+}
+
+
+body {
+  position: relative;
+  font-family: 'Alegreya', serif;
+  background-color: #000;
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  
+}
+
+.site {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 20px;
+
+  @include breakpoint-min(lg) {
+    font-size: 30px;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  
+}
+
+.section-title {
+  
+  position: relative;
+  font-size: 40px;
+  font-weight: 700;
+
+  @include breakpoint-min(lg) {
+    font-size: 60px;
+    margin-bottom: 50px;
+  }
+  
+  span {
+    &:before,
+    &:after 
+    {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-32%) translateY(-15%);
+      height: 1.7em;
+      width: 1.7em;
+      border: 1px solid #fff;
+      border-radius: 50%;
+    }
+    &:after {
+      left: 1em;
+    }
+  }
+}
+
+.audio-player {
+  display: none;
+}
+
+
+.footer {
+  z-index: 15;
+  width: 100%;
+  height: 45px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  transition: transform 0.5s ease;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-icon {
+    @extend %bgi;
+    width: 60px;
+    height: 23px;
+    background-image: url('../assets/svg/footer_icon.svg');
+  }
+  &-author {
+    font-size: 0.7em;
+  }
+  &-year {
+    font-size: 0.8em;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+
+.btn-quiz {
+  @extend %btn;
+  color: #f8f9fa;
+  border-color: #f8f9fa;
+  width: 40%;
+  height: 48px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #000;
+    background-color: $pinkHover;
+    border-color: $pinkHover;
+  }
+
+  &:active {
+    background-color: $pink;
+    border-color: $pink;
+  }
+}
+
+
+
+.result-artists-page {
+  @extend %winAbs;
+  // overflow: hidden;
+  background-color: #fff;
+  transform: translateX(100vw);
+  // transform: translateX(0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &-title {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: lightpink;
+    .category-number {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    .category-result {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+  &-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+
+  &-item {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0px 0px 10px 0px #22bb19;
+    background-size: contain;
+    background-position: center;
+
+    &:hover {
+      box-shadow: 0px 0px 10px 2px #22bb19;
+    }
+
+    &:active {
+      box-shadow: 0px 0px 11px 3px #22bb19;
+    }
+    
+    &.bw  {
+      filter: saturate(0);
+      box-shadow: 0px 0px 10px 0px #f22b00;
+
+      &:hover {
+        box-shadow: 0px 0px 10px 2px #f22b00;
+      }
+  
+      &:active {
+        box-shadow: 0px 0px 11px 3px #f22b00;
+      }
+    }
+  }
+}
+

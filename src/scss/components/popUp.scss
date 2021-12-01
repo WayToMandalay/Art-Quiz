@@ -1,0 +1,170 @@
+.popup {
+  @extend %winAbs;
+  z-index: 15;
+  // position: absolute;
+  background-color:rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(100vh);
+
+  &-result {
+    @extend %popUpInner;
+    row-gap: 40px;
+    width: 300px;
+    
+    &-icon {
+      border-radius: 30px;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-size: contain;
+      background-position: center;
+      &.correct {
+        background-image: url('../assets/img/correct.png');
+      }
+      &.wrong {
+        background-image: url('../assets/img/wrong.png');
+      }
+    }
+    &-img {
+      display: inline-block;
+      position: relative;
+      border-radius: 20px;
+      width: 100%;
+      min-height: 240px;
+      height: auto;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &-info {
+      font-size: 16px;
+      font-family: inherit;
+      text-align: center;
+      &-title {
+        font-size: 1.3em;
+      }
+      p {
+        margin: 0;
+        margin-bottom: 0;
+        font-size: 0.8em;
+        font-style: italic;
+      }
+    }
+  }
+
+  &-round-result {
+    @extend %popUpInner;
+    row-gap: 30px;
+    width: 300px;
+    padding-top: 45px;
+    padding-bottom: 40px;
+    
+    &-icon {
+
+      &-grand {
+        @extend %bgi;
+        width: 230px;
+        height: 90px;
+        background-image: url('../assets/img/grand.png');
+      }
+
+      &-win {
+        @extend %bgi;
+        width: 170px;
+        height: 160px;
+        background-image: url('../assets/img/cup.png');
+      }
+
+      &-lose {
+        @extend %bgi;
+        width: 170px;
+        height: 160px;
+        background-image: url('../assets/img/gameOver.png');
+      }
+    }
+
+    &-title {
+      line-height: 1;
+      text-align: center;
+      font-weight: 700;
+      font-size: 2em;
+      margin: 0;
+    }
+
+    &-semititle {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 1.3em;;
+    }
+
+    &-btns {
+      display: flex;
+      width: 100%;
+      flex-wrap: nowrap;
+      column-gap: 10px;
+      justify-content: center;
+    }
+  }
+
+  &-pause {
+    @extend %popUpInner;
+    width: 300px;
+    min-height: 260px;
+    padding-top: 45px;
+    padding-bottom: 40px;
+
+    &-title {
+      width: 75%;
+      text-align: center;
+    }
+  }
+
+
+}
+
+.btn-result {
+  @extend %btn;
+  color: #000;
+  width: 90%;
+  height: 48px;
+  transition: all 0.3s ease;
+  background-color: $pinkHover;
+  // font-size: 0.8em;
+
+  &:hover {
+    background-color: $pink;
+  }
+
+  &:active {
+    background-color: #fff;
+  }
+}
+
+.btn-home {
+  @extend %btn;
+  letter-spacing: 1;
+  color: #000;
+  width: 90%;
+  height: 48px;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  font-size: 0.8em;
+  line-height: 1;
+  border: 1px solid #000;
+
+  &:hover {
+    background-color: $pinkHover;
+    border-color: $pinkHover;
+  }
+
+  &:active {
+    background-color: $pink;
+    border-color: $pink;
+  }
+}

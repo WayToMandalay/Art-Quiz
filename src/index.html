@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" minimum-scale="1" viewport-fit=cover>
+  <title>Art Quiz</title>
+  
+</head>
+<body>
+  <div class="site">
+    <div class="welcome">
+      <div class="container welcome-container">
+        <div class="settings-btn" id="settings-btn" type="button"></div>
+        <h2 class="section-title welcome-title"><span>Art</span> Quiz</h2>
+  
+        <div class="welcome-btns">
+          <button class="btn btn-outline-light btn-welcome" id="artists-btn" type="button">Artists Quiz</button>
+          <button class="btn btn-outline-light btn-welcome" id="paintings-btn" type="button">Paintings Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="paintings-categories"></div>
+
+    <div class="results-categories"></div>
+
+    <div class="quiz-painting">
+      <div class="container quiz-painting-container">
+
+        <div class="timer-block">
+          <div class="quiz-painting-exit">&#x2715;</div>
+          <div class="timer-block-line">
+            <div class="timer-block-line-progress"></div>
+          </div>
+          <div class="timer-block-time">00</div>
+        </div>
+
+        <div class="quiz-painting-block">
+          <h3 class="quiz-painting-question"></h3>
+          <div class="quiz-painting-image"></div>
+          <div class="quiz-painting-dots"></div>
+          <div class="quiz-painting-answers"></div>
+        </div>
+      </div> 
+    </div>
+
+    <audio class="audio-player"></audio>
+
+    <div class="settings">
+      <div class="container settings-container">
+        <div class="settings-exit" id="settings-exit"></div>
+        <h2 class="settings-title">Settings</h2>
+  
+        <div class="settings-volume">
+          <div class="settings-semititle">Volume</div>
+          <input type="range" class="form-range" id="settings-volume-value" value="0.5" min="0" max="1" step="0.05">
+        </div>
+
+        <div class="settings-timer">
+          <div class="settings-semititle">Time Game</div>
+          <div class="settings-timer-block">
+            <span>On</span>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="settings-timer" checked>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-timer-value">
+          <div class="settings-semititle">Time to answer</div>
+          <div class="settings-timer-controllers">
+            <button class="settings-timer-minus" type="button">&ndash;</button>
+            <span>20</span>
+            <button class="settings-timer-plus" type="button">+</button>
+          </div>
+        </div>
+
+        <div class="settings-btns">
+          <button class="btn btn-outline-light btn-settings" id="settings-default" type="button">Default</button>
+          <button class="btn btn-outline-light btn-settings btn-settings-pink disabled" id="settings-save" type="button">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-artists-page"></div>
+  
+    <div class="popup"></div>
+
+    <footer class="footer">
+      <div class="container footer-container">
+        <a href="https://rs.school/" target="__blank" class="footer-icon"></a>
+        <div class="footer-author">Developed by: StasTheDuck</div>
+        <div class="footer-year">2021</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

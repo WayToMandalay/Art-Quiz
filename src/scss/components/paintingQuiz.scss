@@ -1,0 +1,173 @@
+.quiz-painting {
+  @extend %winAbs;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transform: translateX(100vw);
+  // transform: translateX(100vw);
+  color: #fff;
+
+  &-container {
+    padding: 15px;
+    padding-bottom: 50px;
+    @extend %cont;
+    align-items: center;
+
+    @include breakpoint-min(lg) {
+      padding-top: 40px;
+    }
+  }
+
+  .timer-block {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    width: 100%;
+
+    &-line {
+      position: relative;
+      height: 3px;
+      flex-grow: 1;
+      background-color: #A4A4A4;
+      margin: 0 10px;
+
+      &-progress {
+        position: absolute;
+        display: block;
+        width: 99.55%;
+        height: 100%;
+        background-color: $pink;
+      }
+    }
+
+    &-time {
+      text-align: right;
+      width: 30px;
+      overflow: hidden;
+    }
+  }
+
+  &-exit {
+    padding: 0 5px;
+    cursor: pointer;
+  }
+
+  &-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 45px;
+  }
+
+  &-question {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include breakpoint-min(md) {
+      font-size: 25px;
+    }
+
+    @include breakpoint-min(xl) {
+      font-size: 32px;
+    }
+  }
+
+  &-image {
+    display: inline-block;
+    width: auto;
+    width: 285px;
+    min-height: 285px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include breakpoint-min(md) {
+      width: 350px;
+      min-height: 350px;
+    }
+
+    @include breakpoint-min(xl) {
+      width: 450px;
+      min-height: 450px;
+    }
+  }
+
+  &-answers {
+    width: 100%;
+    max-width: 690px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 20px;
+    overflow-y: auto;
+    .btn {
+      // margin-bottom: 20px;
+      flex-grow: 1;
+      font-size: 0.7em;
+      line-height: 1;
+
+      &.correct {
+        background-color: $green;
+      }
+
+      &.wrong {
+        background-color: $red;
+      }
+    }
+
+    &-item {
+      width: 145px;
+      height: 145px;
+      border-radius: 20px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include breakpoint-min(500) {
+        width: 200px;
+        height: 200px;
+      }
+  
+      @include breakpoint-min(md) {
+        width: 220px;
+        height: 220px;
+      }
+    }
+  }
+
+  &-dots {
+    height: 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    column-gap: 15px;
+    width: 100%;
+  }
+  &-dot {
+    width: 10px;
+    height: 10px;
+    background-color: $pink;
+    // border: 1px solid grey;
+    border-radius: 50%;
+
+    &.correct {
+      background-color: $green;
+    }
+
+    &.wrong {
+      background-color: $red;
+    }
+  }
+}

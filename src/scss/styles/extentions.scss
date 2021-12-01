@@ -1,0 +1,34 @@
+%btn {
+  border-radius: 2rem;
+}
+
+
+%winAbs {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transition: transform 0.7s ease;
+}
+
+%bgi {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+%cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+%popUpInner {
+  border-radius: 20px;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #000;
+  background-color: #fff;
+}
